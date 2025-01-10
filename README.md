@@ -29,7 +29,7 @@
         <a href='https://cs.yale.edu/homes/che/projects/perm/'><img src="https://img.shields.io/badge/Project_Page-perm-green" height=22.5 alt='Project Page'></a>
         <a href='https://zhouyisjtu.github.io/project_hair/hair20k.html'><img src="https://img.shields.io/badge/Dataset-Hair20k-yellow" height=22.5 alt='Dataset'></a>
     <br>
-    <b><sup>1</sup> Yale University &nbsp; | &nbsp; <sup>2</sup> Adobe Research &nbsp; | &nbsp; <sup>3</sup> CAU &nbsp; | &nbsp; <sup>4</sup> KAUST &nbsp; | &nbsp; <sup>5</sup> Nanjing University of Science and Technology </b>
+    <b><sup>1</sup> Yale University &nbsp; | &nbsp; <sup>2</sup> Adobe Research &nbsp; | &nbsp; <sup>3</sup> Kiel University &nbsp; | &nbsp; <sup>4</sup> KAUST &nbsp; | &nbsp; <sup>5</sup> Nanjing University of Science and Technology </b>
   </p>
   
   <table align="center">
@@ -46,7 +46,7 @@
 - [x] Release pre-trained checkpoints.
 - [x] Release fitted Perm parameters for the original 343 hairstyles in USC-HairSalon.
 - [x] Release our training set Hair20k.
-- [ ] Release processed data used for perm training.
+- [x] Release processed data used for perm training.
 - [ ] Release checkpoints trained on more curly data (v2).
 - [ ] Release a reimplementation of our single-view reconstruction pipeline with a public license.
 
@@ -141,7 +141,10 @@ The PCA fitting process has a certain demand on the memory size. In our experime
 - `mask`: baldness map of the hairstyle, 1HW.
 - `roots`: 2D roots of strands in the uv space.
 
-The processed data from the above pipeline (PCA blend shapes, fitted geometry textures) can be downloaded from **[TODO]**.
+The processed data from the above pipeline (original 3D hair models, PCA blend shapes, fitted geometry textures) can be downloaded from this [OneDrive link](https://yaleedu-my.sharepoint.com/:f:/g/personal/chengan_he_yale_edu/EvTqlju7SolPp8vJMgAqczABEAJKQBSt3HBN_Yn8WogOIg), where:
+- `hair20k.tar.gz` contains all the hair models we augmented from USC-HairSalon (already mirrored, 21,054 hairstyles in total).
+- `blend-shapes.tar.gz` contains the solved PCA blend shapes for strands.
+- `neural-textures.tar.gz` contains the fitted textures for each hairstyle.
 
 ## Training
 
