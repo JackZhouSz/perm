@@ -29,7 +29,7 @@
         <a href='https://cs.yale.edu/homes/che/projects/perm/'><img src="https://img.shields.io/badge/Project_Page-perm-green" height=22.5 alt='Project Page'></a>
         <a href='https://zhouyisjtu.github.io/project_hair/hair20k.html'><img src="https://img.shields.io/badge/Dataset-Hair20k-yellow" height=22.5 alt='Dataset'></a>
     <br>
-    <b><sup>1</sup> Yale University &nbsp; | &nbsp; <sup>2</sup> Adobe Research &nbsp; | &nbsp; <sup>3</sup> Kiel University &nbsp; | &nbsp; <sup>4</sup> KAUST &nbsp; | &nbsp; <sup>5</sup> Nanjing University of Science and Technology </b>
+    <b><sup>1</sup> Yale University &nbsp; | &nbsp; <sup>2</sup> Adobe Research &nbsp; | &nbsp; <sup>3</sup> Kiel University &nbsp; | &nbsp; <sup>4</sup> KAUST &nbsp; | &nbsp; <sup>5</sup> NJUST </b>
   </p>
   
   <table align="center">
@@ -49,6 +49,19 @@
 - [x] Release processed data used for perm training.
 - [ ] Release checkpoints trained on more curly data (v2).
 - [ ] Release a reimplementation of our single-view reconstruction pipeline with a public license.
+
+## Single-view Hair Reconstruction (NEW!)
+
+While we are working on a reimplementation of our single-view reconstruction pipeline (which may be released in the future depending on my availability), we have released an **uncurated*** set of single-view reconstruction results to facilitate comparison and benchmarking. These results are obtained by running Perm on online portrait images, which can be downloaded from this [OneDrive link](https://yaleedu-my.sharepoint.com/:f:/g/personal/chengan_he_yale_edu/EvTqlju7SolPp8vJMgAqczABEAJKQBSt3HBN_Yn8WogOIg) (`perm_single_view.tar.gz`).
+
+In the released data, we include 78 examples of fitted body meshes (`iter00001_body.ply`), fitted hair strands (`_stage3_stepC_trim_mask_placed.abc` or `_stage3_stepC_trim_mask_placed.temp.data`), and the corresponding RGB images. A sample blender file (`000000.blend`) is included as well, which can be used as a template to render all the hairstyles. We provide a visual overview of all reconstructed hairstyles below:
+![](perm_single_view.png)
+
+These results span a range of quality — including successful reconstructions, partial failures, and some examples that appear plausible from the input viewpoint but exhibit depth issues when viewed from other angles. Due to limitations in training data, curly/kinky hairstyles are currently not well reconstructed. Overall, we believe this release provides a broad view of what our Perm model can achieve under single-view input settings, and we hope future research can build upon and improve the quality with our released data.
+
+Also note that some fitted body meshes look weird due to the artifacts of [DELTA](https://github.com/yfeng95/DELTA). We truly believe their quality can be improved with more advanced single-view body fitting algorithms.
+
+> Though uncurated, a few completely failed examples are excluded, which are mainly caused by the errors in the estimated strand maps.
 
 ## Getting started
 
@@ -194,11 +207,11 @@ python src/preprocess.py --process_fn=convert --indir={input_data_folder} --outd
 
 If you found this code or paper useful, please consider citing:
 ```bibtex
-@article{he2024perm,
+@inproceedings{he2025perm,
     title={Perm: A Parametric Representation for Multi-Style 3D Hair Modeling},
-    author={He, Chengan and Sun, Xin and Shu, Zhixin and Luan, Fujun and Pirk, S\"{o}ren and Herrera, Jorge Alejandro Amador and Michels, Dominik L and Wang, Tuanfeng Y and Zhang, Meng and Rushmeier, Holly and Zhou, Yi},
-    journal={arXiv preprint arXiv:2407.19451},
-    year={2024}
+    author={He, Chengan and Sun, Xin and Shu, Zhixin and Luan, Fujun and Pirk, S\"{o}ren and Herrera, Jorge Alejandro Amador and Michels, Dominik L. and Wang, Tuanfeng Y. and Zhang, Meng and Rushmeier, Holly and Zhou, Yi},
+    booktitle={International Conference on Learning Representations},
+    year={2025}
 }
 ```
 
