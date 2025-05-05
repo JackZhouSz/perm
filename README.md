@@ -52,7 +52,7 @@
 
 ## Single-view Hair Reconstruction (NEW!)
 
-While we are working on a reimplementation of our single-view reconstruction pipeline (which may be released in the future depending on my availability), we have released an **uncurated*** set of single-view reconstruction results to facilitate comparison and benchmarking. These results are obtained by running Perm on online portrait images, which can be downloaded from this [OneDrive link](https://yaleedu-my.sharepoint.com/:f:/g/personal/chengan_he_yale_edu/EvTqlju7SolPp8vJMgAqczABEAJKQBSt3HBN_Yn8WogOIg) (`perm_single_view.tar.gz`).
+While we are working on a reimplementation of our single-view reconstruction pipeline (which may be released in the future depending on my availability), we have released an **uncurated*** set of single-view reconstruction results to facilitate comparison and benchmarking. These results are obtained by running Perm on portrait images collected by @Vanessik, which can be downloaded from this [OneDrive link](https://yaleedu-my.sharepoint.com/:f:/g/personal/chengan_he_yale_edu/EvTqlju7SolPp8vJMgAqczABEAJKQBSt3HBN_Yn8WogOIg) (`perm_single_view.tar.gz`).
 
 In the released data, we include 78 examples of fitted body meshes (`iter00001_body.ply`), fitted hair strands (`_stage3_stepC_trim_mask_placed.abc` or `_stage3_stepC_trim_mask_placed.temp.data`), and the corresponding RGB images. A sample blender file (`000000.blend`) is included as well, which can be used as a template to render all the hairstyles. We provide a visual overview of all reconstructed hairstyles below:
 ![](perm_single_view.png)
